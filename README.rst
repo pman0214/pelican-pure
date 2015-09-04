@@ -25,6 +25,11 @@ Configure your :code:`pelicanconf.py` as:
 
    % THEME = /path/to/pelican-pure-japanese
 
+Usage
+=====
+
+If you want to use `font awesome <https://fortawesome.github.io/Font-Awesome/>`_ fonts, define :code:`USE_FONT_AWESOME` in your :code:`pelicanconf.py`.
+
 Copyright, License
 ==================
 
