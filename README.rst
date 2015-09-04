@@ -1,14 +1,14 @@
 .. -*- coding: utf-8; -*-
 
 =====================
-Pelican Pure Japanese
+Pelican Pure Template
 =====================
 
 Overview
 ========
 
 This is a pelican theme using `Pure.css <http://purecss.io/>`_.
-The theme is optimized for Japanese blog.
+The theme is designed for Japanese blog.
 
 Installation
 ============
