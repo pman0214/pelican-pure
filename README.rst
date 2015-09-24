@@ -17,13 +17,13 @@ Clone this repository:
 
 .. code-block:: bash
 
-   % git clone https://github.com/pman0214/pelican-pure-japanese.git
+   % git clone https://github.com/pman0214/pelican-pure.git
 
 Configure your :code:`pelicanconf.py` as:
 
 .. code-block:: python
 
-   % THEME = /path/to/pelican-pure-japanese
+   % THEME = /path/to/pelican-pure
 
 Usage
 =====
