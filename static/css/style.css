@@ -47,6 +47,14 @@ body {
 a {
     text-decoration: none;
 }
+p {
+    text-align: justify;
+    text-justify: inter-ideograph;
+    -ms-text-justify: inter-ideograph;
+}
+h1, h2, h3 {
+    color: #080;
+}
 
 /* menu */
 nav,
@@ -71,6 +79,13 @@ article {
     border-bottom: 1px solid;
     border-color: #ccc;
 }
+.basic-info {
+    font-size: 80%;
+}
+.tags a {
+    font-size: 90%;
+    line-height: 80%;
+}
 .summary p {
     margin: 1em 0 0.5em;
     line-height: 1.2em;
@@ -80,10 +95,10 @@ article {
 .sub-head a:link,
 .sub-head a:visited,
 .sub-head a:active {
-    color: #333;
+    color: #080;
 }
 .sub-head a:hover {
-    color: #080;
+    color: #a00;
 }
 
 /* pagination */
