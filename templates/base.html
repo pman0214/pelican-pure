@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html lang="{{ DEFAULT_LANG }}">
+{% if USE_OPEN_GRAPH is not defined %}
+    {% set USE_OPEN_GRAPH = True %}
+{% endif %}
+<html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock %}"{% if USE_OPENGRAPH %} prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#"{% endif %}>
 <head>
-  {% block head %}
   <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=1">
-  <meta http-equiv="x-ua-compatible" content="IE=11">
+  <meta http-equiv="X-UA-Compatible" content="IE=11">
+  {% block author %}
+  <meta name="author" content="{{ AUTHOR }}">
+  {% endblock %}
+  {% if FAVICON %}
+  <link rel="shortcut icon" href="{{ SITEURL }}/{{ FAVICON }}">
+  {% endif %}
   <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pure-min.css">
   <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/ext-pure.css">
   <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css">
@@ -19,7 +27,7 @@
     <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/grids-responsive-min.css">
   <!--<![endif]-->
   <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/html5shiv.js"></script>
   <![endif]-->
     {% if FEED_ALL_ATOM %}
     <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed">
@@ -45,36 +53,54 @@
     {% if TAG_FEED_RSS and tag %}
     <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_RSS|format(tag.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed">
     {% endif %}
-    {% endblock head %}
+    {% if USE_OPEN_GRAPH %}
+    {%     block opengraph %}
+    <!-- open graph tags -->
+    {%         if OG_FB_APP_ID %}
+    <meta property="fb:app_id" content="{{ OG_FB_APP_ID }}">
+    {%         endif %}
+    <meta property="og:site_name" content="{{ SITENAME }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ SITENAME }}">
+    <meta property="og:url" content="{{ SITEURL }}">
+    <meta property="og:description" content="{{ SITENAME }}">
+    {%     endblock %}
+    {% endif %}
 </head>
 
-<body id="index" class="home">
-  <header id="banner" class="body">
-    <h1><a href="{{ SITEURL }}/">{{ SITENAME }} <strong>{{ SITESUBTITLE }}</strong></a></h1>
-        </header><!-- /#banner -->
-        <nav id="menu"><ul>
-        {% for title, link in MENUITEMS %}
-            <li><a href="{{ link }}">{{ title }}</a></li>
-        {% endfor %}
-        {% if DISPLAY_PAGES_ON_MENU %}
-          {% for p in pages %}
-            <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
-          {% endfor %}
-        {% else %}
-          {% if DISPLAY_CATEGORIES_ON_MENU %}
-            {% for cat, null in categories %}
-              <li{% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
-            {% endfor %}
-          {% endif %}
+<body>
+<!-- menu -->
+<div id="menu">
+  <div class="pure-menu pure-menu-horizontal">
+    <ul class="pure-menu-list">
+      <li class="pure-menu-item"><a href="{{ SITEURL }}" class="pure-menu-heading pure-menu-link">{{ SITENAME }}</a></li>
+      {% for title, link in MENUITEMS %}
+      <li class="pure-menu-item"><a href="{{ link }}" class="pure-menu-link">{{ title }}</a></li>
+      {% endfor %}
+      {% if DISPLAY_PAGES_ON_MENU %}
+      {%     for p in PAGES %}
+      <li class="pure-menu-item{% if p == page %} pure-menu-selected{% endif %}"><a href="{{ SITEURL }}/{{ p.url }}" class="pure-menu-link">{{ p.menulabel | default(p.title) }}</a></li>
+      {%     endfor %}
+      {% endif %}
+      <li class="pure-menu-item{% if DISPLAY_CATEGORIES_ON_MENU %} pure-menu-has-children pure-menu-allow-hover{% endif %}">
+        <a href="{{ SITEURL }}/{{ CATEGORIES_URL | default('categories.html') }}" class="pure-menu-link">Categories</a>
+        {% if DISPLAY_CATEGORIES_ON_MENU %}
+        <ul class="pure-menu-children">
+          {%     for cat, null in categories %}
+          <li class="pure-menu-item{% if cat == category %} pure-menu-selected{% endif %}"><a href="{{ SITEURL }}/{{ cat.url }}" class="pure-menu-link">{{ cat }}</a></li>
+          {%     endfor %}
+        </ul>
         {% endif %}
-        </ul></nav><!-- /#menu -->
-        {% block content %}
-        {% endblock %}
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
-                which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-        </footer><!-- /#contentinfo -->
+      </li>
+      <li class="pure-menu-item"><a href="{{ SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}" class="pure-menu-link">Archives</a></li>
+    </ul>
+  </div>
+<!-- div#menu end --></div>
+
+<!-- main -->
+<div id="main">
+<!-- div#main end --></div>
+
+{% include 'inc/footer.html' %}
 </body>
 </html>
