@@ -1,28 +1,33 @@
 {% extends "base.html" %}
 {% block content %}
-<section id="content">
-{% block content_title %}
-<h2>All articles</h2>
-{% endblock %}
+{% if articles %}
+{%     for article in (articles_page.object_list if articles_page else articles) %}
+      <article>
+        <h2><a href="{{ SITEURL}}/{{ article.url }}">{{ article.title }}</a></h2>
+        <div class="article-info">
+          <div class="on-create">Created: <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time></div>
+{%         if SHOW_DATE_MODIFIED %}
+          <div class="on-update">Modified: <time datetime="{{ article.modified.isoformat() }}">{{ article.locale_modified }}</time></div>
+{%         endif %}
+{%         if SHOW_ARTICLE_AUTHOR %}
+{%             if article.author %}
+          <div class="article-author">By <a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a></div>
+{%             endif %}
+{%         endif %}
+          <div class="category">Category: <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></div>
+          <div class="tags">Tags:
+{%         for tag in article.tags %}
+            <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %} /{% endif %}
 
-<ol id="post-list">
-{% for article in articles_page.object_list %}
-        <li><article class="hentry">
-                <header> <h2 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2> </header>
-                <footer class="post-info">
-                    <abbr class="published" title="{{ article.date.isoformat() }}"> {{ article.locale_date }} </abbr>
-                    <address class="vcard author">By
-                    {% for author in article.authors %}
-                        <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
-                    {% endfor %}
-                    </address>
-                </footer><!-- /.post-info -->
-                <div class="entry-content"> {{ article.summary }} </div><!-- /.entry-content -->
-        </article></li>
-{% endfor %}
-</ol><!-- /#posts-list -->
-{% if articles_page.has_other_pages() %}
-    {% include 'pagination.html' %}
+{%         endfor %}
+          </div>
+        </div>
+        <div class="summary">
+          {{ article.summary }}
+          <a href="{{ SITEURL }}/{{ article.url }}">more ...</a>
+        </div>
+      </article>
+{%     endfor %}
 {% endif %}
-</section><!-- /#content -->
+{% include 'inc/pagination.html' %}
 {% endblock content %}
