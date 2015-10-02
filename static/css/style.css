@@ -35,6 +35,8 @@ body {
     margin: 20px;
 }
 #footer {
+    margin: 2em 0;
+    padding: 0.5em;
     color: #ccc;
     border-top: 1px solid;
     border-color: #ccc;
@@ -45,7 +47,6 @@ body {
 /* pagination */
 .pagination {
     margin: 2em 0 1em;
-    text-align: right;
 }
 .pagination a {
     font-size: 70%;
