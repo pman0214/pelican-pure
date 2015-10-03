@@ -48,6 +48,7 @@ a {
     text-decoration: none;
 }
 p {
+    line-height: 1.2em;
     text-align: justify;
     text-justify: inter-ideograph;
     -ms-text-justify: inter-ideograph;
@@ -55,15 +56,31 @@ p {
 h1, h2, h3 {
     color: #080;
 }
+.sub-head,
+.sub-head a,
+.sub-head a:link,
+.sub-head a:visited,
+.sub-head a:active {
+    color: #080;
+}
+.sub-head a:hover {
+    color: #a00;
+}
 
 /* menu */
 nav,
-.pure-menu-link {
+.pure-menu-link,
+.pure-menu-link:visited {
     background-color: #333;
 }
 .pure-menu-link:hover {
     background-color: #ccc;
     color: #333;
+}
+.pure-menu-selected,
+.pure-menu-selected .pure-menu-link:visited {
+    background-color: #ccc;
+    color: #800;
 }
 .pure-menu-heading {
     text-transform: none;
@@ -79,26 +96,28 @@ article {
     border-bottom: 1px solid;
     border-color: #ccc;
 }
+.article-info {
+    margin-left: 2em;
+}
 .basic-info {
     font-size: 80%;
 }
-.tags a {
+.basic-info div {
+    display: inline;
+}
+.basic-info .on-update,
+.basic-info .author,
+.basic-info .category,
+.basic-info .tags {
+    margin-left: 2em;
+}
+.basic-info .category a,
+.basic-info .tags a {
     font-size: 90%;
     line-height: 80%;
 }
-.summary p {
-    margin: 1em 0 0.5em;
-    line-height: 1.2em;
-}
-.sub-head,
-.sub-head a,
-.sub-head a:link,
-.sub-head a:visited,
-.sub-head a:active {
-    color: #080;
-}
-.sub-head a:hover {
-    color: #a00;
+.basic-info .summary p {
+    margin: 1.2em 0 1em;
 }
 
 /* pagination */
@@ -107,4 +126,31 @@ article {
 }
 .pagination a {
     font-size: 70%;
+}
+
+/* archives */
+.archives {
+    font-size: 90%;
+}
+.archive {
+    margin: 0.2em 0;
+}
+.archive div {
+    display: inline;
+}
+.archive .on_create {
+    font-size: 80%;
+    margin-right: 1em;
+}
+.archive .title {
+    font-weight: bold;
+}
+.archive .title a,
+.archive .title a:link,
+.archive .title a:visited,
+.archive .title a:active {
+    color: #333;
+}
+.archive .title a:hover {
+    color: #a00;
 }
