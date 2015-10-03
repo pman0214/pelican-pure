@@ -10,11 +10,12 @@
 {% endif %}
 {% endblock %}
 {% block content %}
+{% block content_title %}{% endblock %}
 {% if articles %}
 {%     for article in (articles_page.object_list if articles_page else articles) %}
 <article>
 <div class="article-list">
-  <h2 class="sub-head"><a href="{{ SITEURL}}/{{ article.url }}">{{ article.title }}</a></h2>
+  <h2 class="sub-head"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
   <div class="article-info">
     <div class="basic-info">
       <div class="on-create">{% if SHOW_DATE_MODIFIED %}Created: {% endif %}<time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time></div>

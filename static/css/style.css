@@ -200,3 +200,18 @@ article a:hover,
 .archive .title a:hover {
     color: #a00;
 }
+
+/* category */
+.category-wrapper {
+    text-align: center;
+    font-size: large;
+    background-color: #f8f8f8;
+    margin: 5px;
+}
+a:hover .category-wrapper {
+    background-color: #0052CC;
+    color: #ccc;
+}
+.article-count {
+    font-size: 80%;
+}
