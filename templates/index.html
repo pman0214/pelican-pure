@@ -1,4 +1,14 @@
 {% extends "base.html" %}
+{% block meta %}{{ super() }}  <meta name="author" content="{{ AUTHOR }}">
+{% endblock %}
+{% block opengraph %}{{ super() }}  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ SITENAME }}">
+  <meta property="og:url" content="{{ SITEURL }}">
+  <meta property="og:description" content="{{ SITENAME }}">
+{% if OPEN_GRAPH_IMAGE %}
+  <meta property="og:image" content="{{ SITEURL }}/{{ OPEN_GRAPH_IMAGE }}">
+{% endif %}
+{% endblock %}
 {% block content %}
 {% if articles %}
 {%     for article in (articles_page.object_list if articles_page else articles) %}
