@@ -67,6 +67,9 @@ code, tt, .literal {
 dt {
     font-weight: bold;
 }
+strong {
+    color: red;
+}
 .sub-head,
 .sub-head a,
 .sub-head a:link,
@@ -83,16 +86,6 @@ dt {
     padding: 0.5em;
     border-radius: 5px;
     background-color: #f8f8f8;
-}
-
-/* main */
-main a:link,
-main a:visited,
-main a:active {
-    color: #0052CC;
-}
-main a:hover {
-    color: #a00;
 }
 
 /* menu */
@@ -118,11 +111,27 @@ nav,
 }
 
 /* article */
-article {
-    margin: 0.5em 20px;
+.article-list {
+    margin: 0.5em 0;
     padding: 0.5em 0;
     border-top: 1px solid;
     border-color: #ccc;
+}
+article a:link,
+article a:visited,
+article a:active,
+.category a:link,
+.category a:visited,
+.category a:active,
+.tags a:link,
+.tags a:visited,
+.tags a:active {
+    color: #0052CC;
+}
+article a:hover,
+.category a:hover,
+.tags a:hover {
+    color: #a00;
 }
 .article-info {
     margin-left: 2em;
@@ -160,6 +169,9 @@ article {
 }
 .pagination a {
     font-size: 70%;
+}
+.pagination a:hover {
+    color: #a00;
 }
 
 /* archives */

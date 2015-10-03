@@ -13,6 +13,7 @@
 {% if articles %}
 {%     for article in (articles_page.object_list if articles_page else articles) %}
 <article>
+<div class="article-list">
   <h2 class="sub-head"><a href="{{ SITEURL}}/{{ article.url }}">{{ article.title }}</a></h2>
   <div class="article-info">
     <div class="basic-info">
@@ -38,6 +39,7 @@
       <p>{{ article.summary }}</p>
     </div>
   </div>
+</div>
 </article>
 {%     endfor %}
 {% endif %}
