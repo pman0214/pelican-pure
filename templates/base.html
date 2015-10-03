@@ -4,7 +4,7 @@
 {% endif %}
 <html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock %}"{% if USE_OPENGRAPH %} prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#"{% endif %}>
 <head>
-  <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+  <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
 {% block meta %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=1">

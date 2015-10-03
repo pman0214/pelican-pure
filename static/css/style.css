@@ -59,6 +59,7 @@ h1, h2, h3, h4, h5, h6 {
 code {
     color: #a00;
     background-color: #f8f8f8;
+    padding: 0.2em;
 }
 dt {
     font-weight: bold;
