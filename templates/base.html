@@ -5,10 +5,10 @@
 <html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock %}"{% if USE_OPENGRAPH %} prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#"{% endif %}>
 <head>
   <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+{% block meta %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=1">
   <meta http-equiv="X-UA-Compatible" content="IE=11">
-{% block author %}
   <meta name="author" content="{{ AUTHOR }}">
 {% endblock %}
 {% if FAVICON %}
@@ -99,28 +99,33 @@
 </header>
 
 <main>
-  <div id="main" class="pure-g">
+<div id="main" class="pure-g">
 {% if not HIDE_SIDEBAR or ABOUT_ME %}
-    <div class="pure-u-1 pure-u-md-5-6">
+<div class="pure-u-1 pure-u-md-5-6">
 {% else %}
-    <div class="pure-u-1">
+
+<!-- main contents -->
+<div class="pure-u-1">
 {% endif %}
 {% block content %}
 {% endblock %}
-    </div>
+<!-- main contents end --></div>
+
 {% if not HIDE_SIDEBAR or ABOUT_ME %}
-    <div class="pure-u-1 pure-u-md-1-6">
-      <aside>
+<!-- sidebar -->
+<div class="pure-u-1 pure-u-md-1-6">
+  <aside>
 {% if ABOUT_ME %}
 {#     include 'includes/aboutme.html' #}
 {% endif %}
 {% if not HIDE_SIDEBAR %}
 {#     include 'includes/sidebar.html' #}
 {% endif %}
-      </aside>
-    </div>
+  </aside>
+<!-- sidebar end --></div>
 {% endif %}
-  </div>
+
+</div>
 </main>
 
 {% include 'inc/footer.html' %}
