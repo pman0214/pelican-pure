@@ -201,17 +201,30 @@ article a:hover,
     color: #a00;
 }
 
-/* category */
-.category-wrapper {
+/* category, tag */
+.category-wrapper,
+.tag-wrapper {
     text-align: center;
     font-size: large;
     background-color: #f8f8f8;
     margin: 5px;
 }
-a:hover .category-wrapper {
+a .category-wrapper, a:link .tag-wrapper,
+a:link .category-wrapper, a:link .tag-wrapper,
+a:visited .category-wrapper, a:visited .tag-wrapper,
+a:active .category-wrapper, a:active .tag-wrapper {
+    color: #0052CC;
+}
+a:hover .category-wrapper, a:hover .tag-wrapper {
     background-color: #0052CC;
-    color: #ccc;
+    color: #eee;
 }
 .article-count {
     font-size: 80%;
+}
+
+/* sidebar */
+.sidebar {
+    font-size: 90%;
+    margin-left: 2em;
 }

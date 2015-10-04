@@ -96,11 +96,10 @@
 
 <main>
 <div id="main" class="pure-g">
-{% if not HIDE_SIDEBAR or ABOUT_ME %}
-<div class="pure-u-1 pure-u-md-5-6">
-{% else %}
-
 <!-- main contents -->
+{% if not HIDE_SIDEBAR or ABOUT_ME %}
+<div class="pure-u-1 pure-u-md-4-5">
+{% else %}
 <div class="pure-u-1">
 {% endif %}
 {% block content %}
@@ -109,18 +108,19 @@
 
 {% if not HIDE_SIDEBAR or ABOUT_ME %}
 <!-- sidebar -->
-<div class="pure-u-1 pure-u-md-1-6">
+<div class="pure-u-1 pure-u-md-1-5">
   <aside>
-{% if ABOUT_ME %}
-{#     include 'includes/aboutme.html' #}
-{% endif %}
-{% if not HIDE_SIDEBAR %}
-{#     include 'includes/sidebar.html' #}
-{% endif %}
+  <div class="sidebar">
+{%     if ABOUT_ME %}
+{%         include 'inc/aboutme.html' %}
+{%     endif %}
+{%     if not HIDE_SIDEBAR %}
+{#         include 'inc/sidebar.html' #}
+{%     endif %}
+  </div>
   </aside>
 <!-- sidebar end --></div>
 {% endif %}
-
 </div>
 </main>
 
