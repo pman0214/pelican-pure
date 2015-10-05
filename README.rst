@@ -1,14 +1,14 @@
 .. -*- coding: utf-8; -*-
 
 =====================
-Pelican Pure Japanese
+Pelican Pure Template
 =====================
 
 Overview
 ========
 
 This is a pelican theme using `Pure.css <http://purecss.io/>`_.
-The theme is optimized for Japanese blog.
+The theme is designed for Japanese blog.
 
 Installation
 ============
@@ -17,13 +17,18 @@ Clone this repository:
 
 .. code-block:: bash
 
-   % git clone https://github.com/pman0214/pelican-pure-japanese.git
+   % git clone https://github.com/pman0214/pelican-pure.git
 
 Configure your :code:`pelicanconf.py` as:
 
 .. code-block:: python
 
-   % THEME = /path/to/pelican-pure-japanese
+   % THEME = /path/to/pelican-pure
+
+Usage
+=====
+
+If you want to use `font awesome <https://fortawesome.github.io/Font-Awesome/>`_ fonts, define :code:`USE_FONT_AWESOME` in your :code:`pelicanconf.py`.
 
 Copyright, License
 ==================

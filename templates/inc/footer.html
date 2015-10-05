@@ -1,0 +1,9 @@
+{% set year = '' %}
+{% if articles %}
+{%     set year = articles[0].date.strftime('%Y') %}
+{% endif %}
+<footer>
+  <div id="footer">
+    &copy; {{ year }} {{ AUTHOR }}
+  </div>
+</footer>

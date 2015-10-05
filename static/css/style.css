@@ -1,1 +1,230 @@
 @charset "utf-8";
+/*
+ * Copyright (c) 2015, Shigemi ISHIDA
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ * 3. Neither the name of the Institute nor the names of its contributors
+ *    may be used to endorse or promote products derived from this software
+ *    without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE INSTITUTE AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE INSTITUTE OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ */
+
+body {
+    font-family: Arial, Roboto, "Droid Sans", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+#main {
+    max-width: 1024px;
+    margin: 30px;
+}
+#footer {
+    margin: 2em 0;
+    padding: 0.5em;
+    color: #ccc;
+    border-top: 1px solid;
+    border-color: #ccc;
+    text-align: center;
+    font-size: 80%;
+}
+a {
+    text-decoration: none;
+}
+p {
+    margin: 1.5em 0;
+    line-height: 1.5em;
+    text-align: justify;
+    text-justify: inter-ideograph;
+    -ms-text-justify: inter-ideograph;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #080;
+}
+code, tt, .literal {
+    font-family: monospace,monospace;
+    font-size: 1em;
+    color: #a00;
+    background-color: #f8f8f8;
+    padding: 0.2em;
+}
+dt {
+    font-weight: bold;
+}
+strong {
+    color: red;
+}
+.sub-head,
+.sub-head a,
+.sub-head a:link,
+.sub-head a:visited,
+.sub-head a:active {
+    color: #080;
+}
+.sub-head a:hover {
+    color: #a00;
+}
+.highlight pre {
+    border: 1px solid;
+    border-color: #333;
+    padding: 0.5em;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+}
+
+/* menu */
+nav,
+.pure-menu-link,
+.pure-menu-link:visited {
+    background-color: #333;
+}
+.pure-menu-link:hover {
+    background-color: #ccc;
+    color: #333;
+}
+.pure-menu-selected,
+.pure-menu-selected .pure-menu-link:visited {
+    background-color: #ccc;
+    color: #a00;
+}
+.pure-menu-heading {
+    text-transform: none;
+}
+.pure-menu-link {
+    color: #ccc;
+}
+
+/* article */
+.article-list {
+    margin: 0.5em 0;
+    padding: 0.5em 0;
+    border-top: 1px solid;
+    border-color: #ccc;
+}
+article a:link,
+article a:visited,
+article a:active,
+.category a:link,
+.category a:visited,
+.category a:active,
+.tags a:link,
+.tags a:visited,
+.tags a:active {
+    color: #0052CC;
+}
+article a:hover,
+.category a:hover,
+.tags a:hover {
+    color: #a00;
+}
+.article-info {
+    margin-left: 2em;
+}
+.basic-info {
+    font-size: 90%;
+}
+.basic-info div {
+    display: inline;
+}
+.basic-info .on-update,
+.basic-info .author,
+.basic-info .tags {
+    margin-left: 2em;
+}
+.basic-info .category a,
+.basic-info .tags a {
+    font-size: 90%;
+    line-height: 80%;
+}
+.basic-info .summary p {
+    margin: 1.2em 0 1em;
+}
+.main-content h2,
+.main-content h3,
+.main-content h4,
+.main-content h5,
+.main-content h6 {
+    margin: 2em 0 1em;
+}
+
+/* pagination */
+.pagination {
+    margin: 2em 0 1em;
+}
+.pagination a {
+    font-size: 70%;
+}
+.pagination a:hover {
+    color: #a00;
+}
+
+/* archives */
+.archives {
+    font-size: 90%;
+}
+.archive {
+    margin: 0.2em 0;
+}
+.archive div {
+    display: inline;
+}
+.archive .on-create {
+    font-size: 80%;
+    margin-right: 1em;
+}
+.archive .title {
+    font-weight: bold;
+}
+.archive .title a,
+.archive .title a:link,
+.archive .title a:visited,
+.archive .title a:active {
+    color: #333;
+}
+.archive .title a:hover {
+    color: #a00;
+}
+
+/* category, tag */
+.category-wrapper,
+.tag-wrapper {
+    text-align: center;
+    font-size: large;
+    background-color: #f8f8f8;
+    margin: 5px;
+}
+a .category-wrapper, a:link .tag-wrapper,
+a:link .category-wrapper, a:link .tag-wrapper,
+a:visited .category-wrapper, a:visited .tag-wrapper,
+a:active .category-wrapper, a:active .tag-wrapper {
+    color: #0052CC;
+}
+a:hover .category-wrapper, a:hover .tag-wrapper {
+    background-color: #0052CC;
+    color: #eee;
+}
+.article-count {
+    font-size: 80%;
+}
+
+/* sidebar */
+.sidebar {
+    font-size: 90%;
+    margin-left: 2em;
+}
