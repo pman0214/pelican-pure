@@ -44,6 +44,16 @@ body {
     text-align: center;
     font-size: 80%;
 }
+#footer a,
+#footer a,
+#footer a:link,
+#footer a:visited,
+#footer a:active {
+    color: #0052CC;
+}
+#footer a:hover {
+    color: #a00;
+}
 a {
     text-decoration: none;
 }
