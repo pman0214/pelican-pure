@@ -20,7 +20,7 @@
     <div class="basic-info">
       <div class="on-create">{% if SHOW_DATE_MODIFIED %}Created: {% endif %}<time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time></div>
 {%         if SHOW_DATE_MODIFIED %}
-      <div class="on-update">Modified: <time datetime="{{ article.modified.isoformat() }}">{{ article.locale_modified }}</time></div>
+      <div class="on-update">Updated: <time datetime="{{ article.modified.isoformat() }}">{{ article.locale_modified }}</time></div>
 {%         endif %}
 {%         if SHOW_ARTICLE_AUTHOR %}
 {%             if article.author %}

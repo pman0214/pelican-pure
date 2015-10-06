@@ -30,9 +30,8 @@
 {% import 'translations.html' as translations with context %}
 {{ translations.translations_for(page) }}
   <div class="basic-info">
-    <div class="on-create">Created: <time datetime="{{ page.date.isoformat() }}">{{ page.locale_date }}</time></div>
 {% if page.modified %}
-    <div class="on-update">Modified: <time datetime="{{ page.modified.isoformat() }}">{{ page.locale_modified }}</time></div>
+    <div class="on-update">Updated: <time datetime="{{ page.modified.isoformat() }}">{{ page.locale_modified }}</time></div>
 {% endif %}
 {% if SHOW_PAGE_AUTHOR %}
 {%     if page.author %}
