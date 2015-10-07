@@ -17,14 +17,14 @@
 <div class="article-list">
   <h2 class="sub-head"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
   <div class="article-info">
-    <div class="basic-info">
-      <div class="on-create">{% if SHOW_DATE_MODIFIED %}Created: {% endif %}<time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time></div>
+    <div class="pure-g basic-info">
+      <div class="pure-u-1 pure-u-md-1-2 on-create">{% if SHOW_DATE_MODIFIED %}Created: {% endif %}<time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time></div>
 {%         if SHOW_DATE_MODIFIED %}
-      <div class="on-update">Updated: <time datetime="{{ article.modified.isoformat() }}">{{ article.locale_modified }}</time></div>
+      <div class="pure-u-1 pure-u-md-1-2 on-update">Updated: <time datetime="{{ article.modified.isoformat() }}">{{ article.locale_modified }}</time></div>
 {%         endif %}
 {%         if SHOW_ARTICLE_AUTHOR %}
 {%             if article.author %}
-      <div class="author">By <a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a></div>
+      <div class="pure-u-1 author">By <a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a></div>
 {%             endif %}
 {%         endif %}
     </div>

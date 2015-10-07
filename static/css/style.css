@@ -154,12 +154,7 @@ article a:hover,
     font-size: 90%;
 }
 .basic-info div {
-    display: inline;
-}
-.basic-info .on-update,
-.basic-info .author,
-.basic-info .tags {
-    margin-left: 2em;
+    margin: 0.2em 0;
 }
 .basic-info .category a,
 .basic-info .tags a,
