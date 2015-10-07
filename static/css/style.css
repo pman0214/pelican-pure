@@ -117,6 +117,9 @@ nav,
 .pure-menu-link {
     color: #ccc;
 }
+.pure-menu .menu-item-divided {
+    border-top: 1px solid #666;
+}
 
 /* article */
 .article-list {

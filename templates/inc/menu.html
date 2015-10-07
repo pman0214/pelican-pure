@@ -5,12 +5,13 @@
         <li class="pure-menu-item"><a href="{{ link }}" class="pure-menu-link">{{ title }}</a></li>
 {% endfor %}
         <li class="pure-menu-item{% if DISPLAY_CATEGORIES_ON_MENU %} pure-menu-has-children pure-menu-allow-hover{% endif %}">
-          <a href="{{ SITEURL }}/{{ CATEGORIES_URL | default('categories.html') }}" class="pure-menu-link">Categories</a>
+          <a href="{% if DISPLAY_CATEGORIES_ON_MENU %}#{% else %}{{ SITEURL }}/{{ CATEGORIES_URL | default('categories.html') }}{% endif %}" class="pure-menu-link">Categories</a>
 {% if DISPLAY_CATEGORIES_ON_MENU %}
           <ul class="pure-menu-children">
 {%     for cat, null in categories %}
             <li class="pure-menu-item{% if cat == category %} pure-menu-selected{% endif %}"><a href="{{ SITEURL }}/{{ cat.url }}" class="pure-menu-link">{{ cat }}</a></li>
 {%     endfor %}
+            <li class="pure-menu-item menu-item-divided"><a href="{{ SITEURL }}/{{ CATEGORIES_URL | default('categories.html') }}" class="pure-menu-link">See all...</a></li>
           </ul>
 {% endif %}
         </li>
