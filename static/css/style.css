@@ -39,8 +39,7 @@ body {
     margin: 2em 0;
     padding: 0.5em;
     color: #ccc;
-    border-top: 1px solid;
-    border-color: #ccc;
+    border-top: 1px solid #ccc;
     text-align: center;
     font-size: 80%;
 }
@@ -91,8 +90,7 @@ strong {
     color: #a00;
 }
 .highlight pre {
-    border: 1px solid;
-    border-color: #333;
+    border: 1px solid #333;
     padding: 0.5em;
     border-radius: 5px;
     background-color: #f8f8f8;
@@ -124,8 +122,7 @@ nav,
 .article-list {
     margin: 0.5em 0;
     padding: 0.5em 0;
-    border-top: 1px solid;
-    border-color: #ccc;
+    border-top: 1px solid #ccc;
 }
 article a:link,
 article a:visited,
@@ -237,6 +234,8 @@ a:hover .category-wrapper, a:hover .tag-wrapper {
 .sidebar {
     font-size: 90%;
     margin-left: 2em;
+    padding: 0 1em;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
-
-/* translations */
