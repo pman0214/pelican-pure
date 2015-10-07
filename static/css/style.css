@@ -135,12 +135,16 @@ article a:active,
 .category a:active,
 .tags a:link,
 .tags a:visited,
-.tags a:active {
+.tags a:active,
+.lang a:link,
+.lang a:visited,
+.lang a:active {
     color: #0052CC;
 }
 article a:hover,
 .category a:hover,
-.tags a:hover {
+.tags a:hover,
+.lang a:hover {
     color: #a00;
 }
 .article-info {
@@ -158,7 +162,8 @@ article a:hover,
     margin-left: 2em;
 }
 .basic-info .category a,
-.basic-info .tags a {
+.basic-info .tags a,
+.basic-info .lang a {
     font-size: 90%;
     line-height: 80%;
 }
@@ -219,7 +224,7 @@ article a:hover,
     background-color: #f8f8f8;
     margin: 5px;
 }
-a .category-wrapper, a:link .tag-wrapper,
+a .category-wrapper, a .tag-wrapper,
 a:link .category-wrapper, a:link .tag-wrapper,
 a:visited .category-wrapper, a:visited .tag-wrapper,
 a:active .category-wrapper, a:active .tag-wrapper {
@@ -238,3 +243,5 @@ a:hover .category-wrapper, a:hover .tag-wrapper {
     font-size: 90%;
     margin-left: 2em;
 }
+
+/* translations */
