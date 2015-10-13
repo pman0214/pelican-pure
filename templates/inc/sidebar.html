@@ -1,0 +1,31 @@
+{% if SOCIAL %}
+    <div class="sidebar-item">
+      <h4 class="sub-head">Social Links</h4>
+      <ul class="social-links">
+{%     for name, link in SOCIAL %}
+        <li><a href="{{ link }}">{{ name }}</a></li>
+{%     endfor %}
+      </ul>
+    </div>
+{% endif %}
+{% if RECENT_POSTS is defined and RECENT_POSTS > 0 %}
+    <div class="sidebar-item">
+      <h4 class="sub-head">Recent Posts</h4>
+      <ul class="recent-posts">
+{% for article in articles[:RECENT_POSTS] %}
+        <li><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></li>
+{% endfor %}        
+      </ul>
+    </div>
+{% endif %}
+{% if DISPLAY_TAGS is not defined or DISPLAY_TAGS %}
+{% set tags = tag_cloud | sort(attribute='1') %}
+    <div class="sidebar-item">
+      <h4 class="sub-head">Tags ({{ tag_cloud }})</h4>
+      <p>
+{% for tag in tags %}
+        <a class="tag tag-{{ tag.1 }}" href="{{ SITEURL }}/{{ tag.0.url }}">{{ tag.0 }}</a>
+{% endfor %}
+      </p>
+    </div>
+{% endif %}
