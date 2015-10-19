@@ -20,8 +20,8 @@
 {% endif %}
 {% if DISPLAY_TAGS is not defined or DISPLAY_TAGS %}
 {% set tags = tag_cloud | sort(attribute='1') %}
-    <div class="sidebar-item">
-      <h4 class="sub-head">Tags ({{ tag_cloud }})</h4>
+    <div class="sidebar-item tags">
+      <h4 class="sub-head">Tags</h4>
       <p>
 {% for tag in tags %}
         <a class="tag tag-{{ tag.1 }}" href="{{ SITEURL }}/{{ tag.0.url }}">{{ tag.0 }}</a>

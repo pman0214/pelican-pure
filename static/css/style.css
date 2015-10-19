@@ -242,3 +242,9 @@ a:hover .category-wrapper, a:hover .tag-wrapper {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+a.tag-1 {
+    font-size: 150%;
+}
+a.tag-2 {
+    font-size: 120%;
+}
