@@ -13,10 +13,12 @@ The theme is designed for Japanese blog.
 This theme is **NOT FULLY TESTED**.
 Bug fix pull requests are welcome.
 
-TODO
-====
+Requires
+========
 
-* Sidebar is under development.
+* Pelican >= 3.6
+
+  * Install the tag cloud plugin if you want to display tag cloud on a sidebar.
 
 How to Install?
 ===============
@@ -54,6 +56,18 @@ This theme supports the following standard Pelican settings:
 
 Extra
 -----
+
+Links
+~~~~~
+
+You can list links and social links using :code:`LINKS` and :code:`SOCIAL` variables:
+
+.. code-block:: python
+
+   LINKS = (('Blog', 'http://xxxxxxxxx'),)
+   SOCIAL = (('facebook', 'https://www.facebook.com/xxxxxxx'),
+             ('twitter', 'https://twitter.com/xxxxxxx'),
+             ('github', 'https://github.com/xxxxxxx'),)
 
 Fontawesome
 ~~~~~~~~~~~
