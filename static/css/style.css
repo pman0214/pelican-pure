@@ -32,7 +32,6 @@ body {
     font-family: Arial, Roboto, "Droid Sans", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
 }
 #main {
-    max-width: 1024px;
     margin: 30px;
 }
 #footer {
@@ -246,9 +245,16 @@ ul.links {
     padding: 0;
     list-style: none;
 }
+a.tag {
+    margin-right: 1em;
+    text-align: left;
+}
 a.tag-1 {
-    font-size: 150%;
+    font-size: 120%;
 }
 a.tag-2 {
-    font-size: 120%;
+    font-size: 100%;
+}
+a.tag-3, a.tag-4, a.tag-5, a.tag-6 {
+    font-size: 90%;
 }
