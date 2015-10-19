@@ -13,6 +13,13 @@ The theme is designed for Japanese blog.
 This theme is **NOT FULLY TESTED**.
 Bug fix pull requests are welcome.
 
+Requires
+========
+
+* Pelican >= 3.6
+
+  * Install the tag cloud plugin if you want to display tag cloud on a sidebar.
+
 TODO
 ====
 
