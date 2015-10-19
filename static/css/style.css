@@ -242,6 +242,10 @@ a:hover .category-wrapper, a:hover .tag-wrapper {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+ul.links {
+    padding: 0;
+    list-style: none;
+}
 a.tag-1 {
     font-size: 150%;
 }

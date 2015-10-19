@@ -1,7 +1,17 @@
+{% if LINKS %}
+    <div class="sidebar-item">
+      <h4 class="sub-head">Links</h4>
+      <ul class="links">
+{%     for name, link in LINKS %}
+        <li><a href="{{ link }}">{{ name }}</a></li>
+{%     endfor %}
+      </ul>
+    </div>
+{% endif %}
 {% if SOCIAL %}
     <div class="sidebar-item">
       <h4 class="sub-head">Social Links</h4>
-      <ul class="social-links">
+      <ul class="links">
 {%     for name, link in SOCIAL %}
         <li><a href="{{ link }}">{{ name }}</a></li>
 {%     endfor %}

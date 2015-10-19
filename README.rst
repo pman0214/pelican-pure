@@ -20,11 +20,6 @@ Requires
 
   * Install the tag cloud plugin if you want to display tag cloud on a sidebar.
 
-TODO
-====
-
-* Sidebar is under development.
-
 How to Install?
 ===============
 
@@ -61,6 +56,18 @@ This theme supports the following standard Pelican settings:
 
 Extra
 -----
+
+Links
+~~~~~
+
+You can list links and social links using :code:`LINKS` and :code:`SOCIAL` variables:
+
+.. code-block:: python
+
+   LINKS = (('Blog', 'http://xxxxxxxxx'),)
+   SOCIAL = (('facebook', 'https://www.facebook.com/xxxxxxx'),
+             ('twitter', 'https://twitter.com/xxxxxxx'),
+             ('github', 'https://github.com/xxxxxxx'),)
 
 Fontawesome
 ~~~~~~~~~~~
