@@ -16,9 +16,7 @@ Bug fix pull requests are welcome.
 Requires
 ========
 
-* Pelican >= 3.6
-
-  * Install the tag cloud plugin if you want to display tag cloud on a sidebar.
+* The tag cloud plugin if you want to display tag cloud on a sidebar using Pelican >= 3.6.
 
 How to Install?
 ===============
