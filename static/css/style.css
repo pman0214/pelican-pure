@@ -232,6 +232,15 @@ a:hover .category-wrapper, a:hover .tag-wrapper {
     font-size: 80%;
 }
 
+/* disqus */
+#disqus_thread {
+    margin-top: 3em;
+    padding: 0 1em;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
 /* sidebar */
 .sidebar {
     font-size: 90%;
