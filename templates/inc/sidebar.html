@@ -29,13 +29,11 @@
     </div>
 {% endif %}
 {% if DISPLAY_TAGS is not defined or DISPLAY_TAGS %}
-{% set tags = tag_cloud | sort(attribute='1') %}
+{% set tags = tag_cloud | sort(attribute='0') %}
     <div class="sidebar-item tags">
       <h4 class="sub-head">Tags</h4>
-      <p>
 {% for tag in tags %}
-        <a class="tag tag-{{ tag.1 }}" href="{{ SITEURL }}/{{ tag.0.url }}">{{ tag.0 }}</a>
+      <a class="tag tag-{{ tag.1 }}" href="{{ SITEURL }}/{{ tag.0.url }}">{{ tag.0 }}</a>
 {% endfor %}
-      </p>
     </div>
 {% endif %}
