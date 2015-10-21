@@ -153,3 +153,11 @@ main p {
 .index h1 {
     font-size: 1.5em;
 }
+/* comments */
+#comments {
+    margin-top: 3em;
+    padding: 0 1em;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
