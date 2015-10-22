@@ -159,6 +159,11 @@ strong {
 #sidebar a.tag-4, #sidebar a.tag-5, #sidebar a.tag-6 {
     font-size: 90%;
 }
+@media screen and (max-width:1023px) {
+    .sidebar {
+        margin: 2em 0 0 0;
+    }
+}
 /*------------------------------
  * pages
  *------------------------------*/
@@ -182,7 +187,7 @@ section.contents a:active {
 .index h1 {
     font-size: 1.5em;
 }
-/* comments */
+/* disqus comments */
 #comments {
     margin-top: 3em;
     padding: 0 1em;
