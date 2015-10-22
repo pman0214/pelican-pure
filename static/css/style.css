@@ -43,9 +43,6 @@ h1, h2, h3, h4, h5, h6,
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     color: #080;
 }
-main a:hover, aside a:hover, footer a:hover {
-    color: #a00;
-}
 code, tt, .literal {
     font-family: monospace,monospace;
     font-size: 1em;
@@ -58,6 +55,33 @@ dt {
 }
 strong {
     color: red;
+}
+#main p {
+    margin: 1.5em 0;
+    line-height: 1.5em;
+    text-align: justify;
+    text-justify: inter-ideograph;
+    -ms-text-justify: inter-ideograph;
+}
+#main a:hover, #sidebar a:hover, #footer a:hover {
+    color: #a00;
+}
+/* article info */
+.article-info {
+    font-size: 90%;
+}
+.article-info div {
+    margin: 0.2em 0;
+}
+.article-info .category a, .article-info .tags a, .article-info .lang a {
+    font-size: 90%;
+    line-height: 80%;
+}
+.article-info a,
+.article-info a:link
+.article-info a:visited,
+.article-info a:active {
+    color: #0052CC;
 }
 /*------------------------------
  * menu
@@ -93,6 +117,12 @@ strong {
     border-top: 1px solid #ccc;
     text-align: center;
     font-size: 80%;
+}
+#footer a,
+#footer a:link
+#footer a:visited,
+#footer a:active {
+    color: #0052CC;
 }
 /*------------------------------
  * sidebar
@@ -130,14 +160,13 @@ strong {
     font-size: 90%;
 }
 /*------------------------------
- * main
+ * pages
  *------------------------------*/
-main p {
-    margin: 1.5em 0;
-    line-height: 1.5em;
-    text-align: justify;
-    text-justify: inter-ideograph;
-    -ms-text-justify: inter-ideograph;
+section.contents a,
+section.contents a:link
+section.contents a:visited,
+section.contents a:active {
+    color: #0052CC;
 }
 /* pagination */
 #pagination {
@@ -160,4 +189,42 @@ main p {
     background-color: #f8f8f8;
     border: 1px solid #ccc;
     border-radius: 5px;
+}
+/* archives */
+table.archive {
+    border: none;
+}
+table.archive td, table.archive th {
+    padding: 0.2em 1em;
+    border: none;
+}
+table.archive td.title {
+    font-weight: bold;
+}
+table.archive td.title a,
+table.archive td.title a:link,
+table.archive td.title a:visited,
+table.archive td.title a:active {
+    color: #0052CC;
+}
+/* tags, categories */
+.tag-cat-button {
+    text-align: center;
+    font-size: large;
+    background-color: #f8f8f8;
+    margin: 5px;
+}
+.tag-cat-button .article-count {
+    font-size: 80%;
+}
+a:hover .tag-cat-button {
+    background-color: #0052CC;
+    color: #eee;
+}
+/* code highlight */
+.highlight pre {
+    border: 1px solid #333;
+    padding: 0.5em;
+    border-radius: 5px;
+    background-color: #f8f8f8;
 }
