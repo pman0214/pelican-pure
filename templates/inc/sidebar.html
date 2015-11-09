@@ -35,5 +35,6 @@
 {% for tag in tags %}
       <a class="tag tag-{{ tag.1 }}" href="{{ SITEURL }}/{{ tag.0.url }}">{{ tag.0 }}</a>
 {% endfor %}
+      <p><a href="{{ SITEURL }}/{{ TAGS_URL | default('tags.html') }}">See all...</a></p>
     </section>
 {% endif %}
