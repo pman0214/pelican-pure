@@ -160,7 +160,7 @@ strong {
     font-size: 90%;
 }
 @media screen and (max-width:1023px) {
-    .sidebar {
+    #sidebar {
         margin: 2em 0 0 0;
     }
 }
@@ -172,6 +172,9 @@ section.contents a:link
 section.contents a:visited,
 section.contents a:active {
     color: #0052CC;
+}
+.section {
+    margin: 0.8em 0;
 }
 /* pagination */
 #pagination {
