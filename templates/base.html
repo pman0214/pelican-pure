@@ -66,42 +66,39 @@
 
 <body>
 <header>
-  <nav>
+  <nav id="menu">
 {% include 'inc/menu.html' %}
   </nav>
 </header>
 
-<main>
-<div id="main" class="pure-g">
-<!-- main contents -->
+<div id="layout" class="pure-g">
 {% if not HIDE_SIDEBAR or ABOUT_ME %}
 <div class="pure-u-1 pure-u-lg-3-4">
 {% else %}
 <div class="pure-u-1">
 {% endif %}
+<main id="main">
 {% block content %}
 {% endblock %}
-<!-- main contents end --></div>
+</main>
+</div>
 
 {% if not HIDE_SIDEBAR or ABOUT_ME %}
-<!-- sidebar -->
 <div class="pure-u-1 pure-u-lg-1-4">
-  <aside>
-  <div class="sidebar">
+<aside id="sidebar">
 {%     if ABOUT_ME %}
 {%         include 'inc/aboutme.html' %}
 {%     endif %}
 {%     if not HIDE_SIDEBAR %}
 {%         include 'inc/sidebar.html' %}
 {%     endif %}
-  </div>
-  </aside>
-<!-- sidebar end --></div>
-{% endif %}
+</aside>
 </div>
-</main>
+{% endif %}
+<!-- #layout --></div>
 
+<footer id="footer">
 {% include 'inc/footer.html' %}
-
+</footer>
 </body>
 </html>

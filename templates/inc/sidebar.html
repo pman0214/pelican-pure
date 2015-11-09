@@ -1,26 +1,26 @@
 {% if LINKS %}
-    <div class="sidebar-item">
-      <h4 class="sub-head">Links</h4>
+    <section>
+      <h1>Links</h1>
       <ul class="links">
 {%     for name, link in LINKS %}
         <li><a href="{{ link }}">{{ name }}</a></li>
 {%     endfor %}
       </ul>
-    </div>
+    </section>
 {% endif %}
 {% if SOCIAL %}
-    <div class="sidebar-item">
-      <h4 class="sub-head">Social Links</h4>
+    <section>
+      <h1>Social Links</h1>
       <ul class="links">
 {%     for name, link in SOCIAL %}
         <li><a href="{{ link }}">{{ name }}</a></li>
 {%     endfor %}
       </ul>
-    </div>
+    </section>
 {% endif %}
 {% if RECENT_POSTS is defined and RECENT_POSTS > 0 %}
-    <div class="sidebar-item">
-      <h4 class="sub-head">Recent Posts</h4>
+    <section>
+      <h1>Recent Posts</h1>
       <ul class="recent-posts">
 {% for article in articles[:RECENT_POSTS] %}
         <li><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></li>
@@ -30,10 +30,11 @@
 {% endif %}
 {% if DISPLAY_TAGS is not defined or DISPLAY_TAGS %}
 {% set tags = tag_cloud | sort(attribute='0') %}
-    <div class="sidebar-item tags">
-      <h4 class="sub-head">Tags</h4>
+    <section class="tags">
+      <h1>Tags</h1>
 {% for tag in tags %}
       <a class="tag tag-{{ tag.1 }}" href="{{ SITEURL }}/{{ tag.0.url }}">{{ tag.0 }}</a>
 {% endfor %}
-    </div>
+      <p><a href="{{ SITEURL }}/{{ TAGS_URL | default('tags.html') }}">See all...</a></p>
+    </section>
 {% endif %}

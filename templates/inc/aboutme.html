@@ -1,8 +1,8 @@
-    <div class="sidebar-item about-me">
+    <section>
+      <h1>About {{ AUTHOR }}</h1>
 {% if AVATAR %}
-      <p><img class="pure-img" src="{{ AVATAR }}"></p>
+      <div><img class="pure-img" src="{{ AVATAR }}"></div>
 {% endif %}
-      <h4 class="sub-head">About {{ AUTHOR }}</h4>
       <p>{{ ABOUT_ME }}</p>
-    </div>
+    </section>
 
