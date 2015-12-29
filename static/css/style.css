@@ -200,7 +200,7 @@ section.contents a:active {
 }
 /* archives */
 table.archive {
-    border: none;
+    width: 100%;
 }
 table.archive td, table.archive th {
     padding: 0.2em 1em;
