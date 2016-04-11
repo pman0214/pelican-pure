@@ -44,7 +44,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     color: #080;
 }
 code, tt, .literal {
-    font-family: monospace,monospace;
+    font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
     font-size: 1em;
     color: #a00;
     background-color: #f8f8f8;
@@ -231,6 +231,7 @@ a:hover .tag-cat-button {
 }
 /* code highlight */
 .highlight pre {
+    font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
     border: 1px solid #333;
     padding: 0.5em;
     border-radius: 5px;
